@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi personita favorita 🎀</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url(imagenes/imagen2.jpg);
+            background-size: 250px;
+            background-repeat: repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #4a4a4a;
+            position: relative;
+            padding: 20px 0;
+            box-sizing: border-box;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 240, 243, 0.4);
+            z-index: 1;
+        }
+
+        .card {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 25px;
+            border-radius: 25px;
+            box-shadow: 0 12px 30px rgba(255, 75, 110, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            border: 4px solid #ffb3c1;
+        }
+
+        .kitty-gif {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        h1 {
+            color: #ff4b6e;
+            font-size: 26px;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            color: #ff758f;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #5c5c5c;
+        }
+
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #fff5f7;
+            padding: 20px;
+            border-radius: 18px;
+            border: 2px dashed #ffb3c1;
+        }
+
+        label {
+            font-weight: bold;
+            text-align: left;
+            font-size: 14px;
+            color: #ff4b6e;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ffe3e8;
+            border-radius: 12px;
+            resize: none;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #ff4b6e;
+            box-shadow: 0 0 8px rgba(255, 75, 110, 0.2);
+        }
+
+        button {
+            background-color: #ff4b6e;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 75, 110, 0.3);
+        }
+
+        button:hover {
+            background-color: #ff2a51;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 75, 110, 0.4);
+        }
+
+        .footer-hearts {
+            margin-top: 20px;
+            color: #ff758f;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img class="kitty-gif" src="imagenes/imagen1.gif" alt="Hello Kitty">
+        
+        <h1>¡Hola, mi amor!</h1>
+        <div class="subtitle">Hecho especialmente para ti</div>
+        
+        <p>Como sé cuánto te encanta Hello Kitty, diseñé este pequeño detalle para hacerte saber lo mucho que me importas y que eres la personita más hermosa y especial de mi vida. 💕</p>
+        
+        <!-- Caja interactiva con JavaScript -->
+        <div class="form-box">
+            <label for="mensaje">💝 ¿Qué es lo que más te gusta de estar juntos?</label>
+            <textarea id="mensaje" rows="4" placeholder="Escribe aquí tu mensajito..." required></textarea>
+            
+            <button onclick="enviarMensaje()">Enviar a mi novio ❤️</button>
+        </div>
+
+        <div class="footer-hearts">🎀🐾 Te amo muchísimo 🐾🎀</div>
+    </div>
+
+    <script>
+        function enviarMensaje() {
+            var texto = document.getElementById("mensaje").value;
+            if(texto.trim() === "") {
+                alert("¡Escribe algo antes de enviar, mi amor! 🎀");
+            } else {
+                // Alerta interactiva y tierna para ella
+                alert("¡Mensaje enviado con éxito! 💌\n\nLe acaba de llegar al corazón de tu novio. ¡Te amo!❤️🎀");
+                document.getElementById("mensaje").value = ""; // Limpia el cuadro
+            }
+        }
+    </script>
+
+</body>
+</html>
